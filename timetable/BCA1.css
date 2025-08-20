@@ -1,0 +1,105 @@
+body {
+    font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top, #0f0f1f, #050510);
+    color: #f5f5f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Headings */
+h1, h2 {
+    font-family: "Orbitron", sans-serif;
+    color: #ff00ff; /* neon pink */
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #00eaff, 0 0 30px #ff00ff;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+/* Cyberpunk table */
+table {
+    border: 2px solid #ff00ff;
+    border-radius: 10px;
+    border-collapse: collapse;
+    margin: auto;
+    width: auto;
+    height: 600px;
+    font-size: larger;
+    background: rgba(10, 10, 20, 0.9);
+    box-shadow: 0 0 25px #ff00ff, 0 0 50px #00eaff;
+}
+
+/* Headers */
+th {
+  background: linear-gradient(135deg, rgba(0,255,255,0.15), rgba(255,0,255,0.15));
+  color: #0ff;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border: 2px solid rgba(0,255,255,0.4);
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+/* Glitch hover effect */
+th:hover {
+  color: #f0f;
+  text-shadow: 0 0 4px #0ff, 0 0 8px #f0f;
+}
+
+th:hover::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -2px 0 magenta;
+  overflow: hidden;
+  animation: glitch 0.4s infinite linear alternate-reverse;
+}
+
+@keyframes glitch {
+  0% { clip-path: inset(0 0 80% 0); }
+  20% { clip-path: inset(10% 0 60% 0); }
+  40% { clip-path: inset(40% 0 20% 0); }
+  60% { clip-path: inset(80% 0 5% 0); }
+  80% { clip-path: inset(20% 0 70% 0); }
+  100% { clip-path: inset(0 0 80% 0); }
+}
+
+
+/* Table cells */
+td {
+    border: 1px solid #00eaff;
+    padding: 20px;
+    text-align: center;
+    vertical-align: middle;
+    background: rgba(15, 15, 25, 0.85);
+    color: #f0f0f0;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Neon glow hover with glitch */
+td:hover {
+    background: rgba(30, 0, 40, 0.95);
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #00eaff;
+    animation: glitch 0.3s linear infinite;
+    cursor: pointer;
+}
+
+/* Alternate rows */
+tr:nth-child(even) td {
+    background: rgba(20, 20, 30, 0.9);
+}
+
+/* Glitch keyframes */
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
